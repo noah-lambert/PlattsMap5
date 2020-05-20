@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="#ffffff"
-        tools:context=".InputScheduleActivity">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#ffffff"
+    tools:context=".InputScheduleActivity">
 
         <!--<EditText
             android:id="@+id/text1"
@@ -56,14 +55,16 @@
             android:layout_width="410dp"
             android:layout_height="100dp"
             >
+
             <Button
                 android:id="@+id/addClass"
                 android:onClick="addRow2"
-                android:text="Add Another Class"></Button>
+                android:text="Add Another Class" />
+
             <Button
                 android:id="@+id/EnterBtn"
                 android:onClick="EnterSchedule"
-                android:text="Enter Schedule"></Button>
+                android:text="Enter Schedule" />
         </TableLayout>
 
 
