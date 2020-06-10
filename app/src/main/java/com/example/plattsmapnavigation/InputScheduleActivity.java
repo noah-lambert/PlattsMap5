@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TableLayout;
 import android.widget.TableRow;
@@ -54,6 +55,7 @@ public class InputScheduleActivity extends AppCompatActivity implements AdapterV
         edit_class.setWidth(width/6);
         count +=1;
         r1.addView(edit_class);
+
         Spinner edit_loc = new Spinner(this);
         ArrayAdapter<CharSequence> adapterH = ArrayAdapter.createFromResource(this, R.array.halls, android.R.layout.simple_spinner_item);
         adapterH.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -62,6 +64,7 @@ public class InputScheduleActivity extends AppCompatActivity implements AdapterV
         edit_loc.setOnItemSelectedListener(this);
         count +=1;
         r1.addView(edit_loc);
+
         Spinner edit_days = new Spinner(this);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.days, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -69,14 +72,10 @@ public class InputScheduleActivity extends AppCompatActivity implements AdapterV
         edit_days.setOnItemSelectedListener(this);
         count +=1;
         r1.addView(edit_days);
-        Button btn = new Button(this);
-        btn.setText("Time");
-        btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                addTimePicker();
-            }
-        });
+
+        ImageButton btn = new ImageButton(this);
+        btn.setBackgroundResource(R.drawable.time_icon);
+        btn.setOnClickListener(v -> addTimePicker());
         r1.addView(btn);
         count+=2;
         //start text
@@ -114,6 +113,7 @@ public class InputScheduleActivity extends AppCompatActivity implements AdapterV
             r1.setLayoutParams(new TableRow.LayoutParams(
                     TableRow.LayoutParams.MATCH_PARENT,
                     TableRow.LayoutParams.WRAP_CONTENT));
+
             //class text
             EditText edit_class = new EditText(this);
             edit_class.setId(IDs[count]);
@@ -121,6 +121,8 @@ public class InputScheduleActivity extends AppCompatActivity implements AdapterV
             edit_class.setWidth(width/6);
             count +=1;
             r1.addView(edit_class);
+
+            //location spinner
             Spinner edit_loc = new Spinner(this);
             ArrayAdapter<CharSequence> adapterH = ArrayAdapter.createFromResource(this, R.array.halls, android.R.layout.simple_spinner_item);
             adapterH.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -129,6 +131,8 @@ public class InputScheduleActivity extends AppCompatActivity implements AdapterV
             edit_loc.setOnItemSelectedListener(this);
             count +=1;
             r1.addView(edit_loc);
+
+            //days of the week spinner
             Spinner edit_days = new Spinner(this);
             ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.days, android.R.layout.simple_spinner_item);
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -136,8 +140,10 @@ public class InputScheduleActivity extends AppCompatActivity implements AdapterV
             edit_days.setOnItemSelectedListener(this);
             count +=1;
             r1.addView(edit_days);
-            Button btn = new Button(this);
-            btn.setText("Time");
+
+            //time of the day button
+            ImageButton btn = new ImageButton(this);
+            btn.setBackgroundResource(R.drawable.time_icon);
             btn.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v){
